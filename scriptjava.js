@@ -1,6 +1,6 @@
 const background = document.querySelector('.background');
 
-function createCircle() {
+function snowflake() {
     const circle = document.createElement('div');
     circle.style.position = 'absolute';
     circle.style.width = '10px';
@@ -10,10 +10,11 @@ function createCircle() {
     circle.style.top = '-10%';
     circle.style.left = `${Math.random() * 100}%`;
     circle.style.animation = `fall ${2 + Math.random() * 3}s linear infinite`;
+    circle.style.filter = 'blur(5px)';
     background.appendChild(circle);
     setTimeout(() => {
         circle.remove();
     }, 5000);
 }
 
-setInterval(createCircle, 100);
+setInterval(snowflake, 75);
