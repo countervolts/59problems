@@ -68,6 +68,7 @@ body, html {
     text-decoration: none;
     font-size: larger;
     transition: background 0.3s;
+    text-align: center;
 }
 
 .button:last-child {
@@ -75,6 +76,73 @@ body, html {
 }
 
 .button:hover {
+    background: rgba(80, 79, 79, 1);
+}
+
+.button-container2 {
+    position: absolute;
+    top: 90%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.button2 {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background: rgba(80, 79, 79, 0.7);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: larger;
+    transition: background 0.3s;
+    width: 69px;
+    text-align: center;
+}
+
+.button2:last-child {
+    margin-right: 0;
+}
+
+.button2:hover {
+    background: rgba(80, 79, 79, 1);
+}
+
+.button-container3 {
+    position: absolute;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-left: 90%;
+    margin-right: 10%;
+}
+
+.button3 {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background: rgba(80, 79, 79, 0.7);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: larger;
+    transition: background 0.3s;
+    width: 60px;
+    text-align: center;
+}
+
+.button3:last-child {
+    margin-right: 0;
+}
+
+.button3:hover {
     background: rgba(80, 79, 79, 1);
 }
 
