@@ -1,0 +1,106 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="cools.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="rectangle background">
+        <div class="outside-text">
+            Things ive coded!
+            <a href="https://github.com/countervolts" class="github-link">Github here!</a>
+        </div>
+        <div class="box" id="spotify">
+            <a href="https://github.com/countervolts/Spotify-Stats-Calculator">Spotify Stats Calculator</a>
+            <div class="inner-box-container">
+                <div class="inner-box long">
+                    <h2>What does the code do?</h2>
+                    <p>This Python script is designed to analyze a user's Spotify streaming history. It scans the user's Downloads folder for a file named "my_spotify_data.zip", extracts it, and then reads the JSON files within it to gather data about the user's listening habits.</p>
+                    <h3>Step-by-step breakdown:</h3>
+                    <ol>
+                        <li>The script first asks for the user's permission to scan their Downloads folder.</li>
+                        <li>It then scans the specified directories (in this case, the Downloads folder) and counts the total number of files in each directory.</li>
+                        <li>The script searches for a file named "my_spotify_data.zip" in the directories. If found, it extracts the zip file.</li>
+                        <li>The script then reads all the JSON files in the directories that match the pattern 'Streaming_History_Audio_*.json'.</li>
+                        <li>The data from these JSON files is read into a pandas DataFrame, which is a 2-dimensional labeled data structure with columns of potentially different types.</li>
+                        <li>The script then performs various calculations on the DataFrame to gather statistics about the user's listening habits, such as total streams, total minutes streamed, total hours streamed, different tracks, and different artists.</li>
+                        <li>It also calculates the top 10 most streamed artists and tracks.</li>
+                        <li>Finally, the script writes these statistics to a text file named 'Stats.txt'.</li>
+                    </ol>
+                </div>
+                <div class="inner-box short">
+                    <h2>Here are some examples</h2>
+                    <ul>
+                        <li><a href="https://github.com/countervolts/Spotify-Stats-Calculator/blob/main/examples/CommandPromptOutput.txt">Command Prompt Output</a></li>
+                        <li><a href="https://github.com/countervolts/Spotify-Stats-Calculator/blob/main/examples/Stats.txt">Stats.txt Output</a></li>
+                    </ul>
+                </div>
+                <div class="inner-box short1">
+                    <h2>Pylint Ratings</h2>
+                    <ul id="pylint-ratings">
+                        <li><a href="https://github.com/countervolts/Spotify-Stats-Calculator/blob/main/reader.py">reader.py</a> - 7.16/10</li>
+                        <li><a href="https://github.com/countervolts/Spotify-Stats-Calculator/blob/main/executable/src/executable.py">executable.py</a> - 8.33/10</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box" id="apple">
+            <a href="https://github.com/countervolts/Apple-Music-Stats-Calculator">Apple Music Stats Calculator</a>
+            <div class="inner-box-container">
+                <div class="inner-box long">
+                    <h2>What does the code do?</h2>
+                    <p>This Python script is used to analyze the user's Apple Music listening history. It first locates the "Apple Music - Play History Daily Tracks.csv" file in the user's Downloads folder. If the file is not found, it prompts the user to place the file in the correct location and re-run the script.</p>
+                    <h3>Step-by-step breakdown:</h3>
+                    <ol>
+                        <li>The script then reads the CSV file into a pandas DataFrame, using the 'Date Played' column as a datetime object. It clears the console screen for better readability.</li>
+                        <li>The script iterates over each row in the DataFrame, extracting the main artist from the 'Track Description' column and calculating the play duration in minutes. These values are then added to new columns in the DataFrame.</li>
+                        <li>The script groups the DataFrame by artist and track, calculating the total play duration in minutes for each. It then sorts these groups and selects the top 50 artists and tracks.</li>
+                        <li>It calculates some overall statistics, such as total streams, total minutes streamed, total hours streamed, number of different tracks, and number of different artists. The script then prints out the top 10 most streamed artists and tracks.</li>
+                        <li>The user is given the option to customize the output file, Stats.txt. They can choose how many artists and songs to include in the file.</li>
+                        <li>The script writes the statistics, top artists, and top tracks to the Stats.txt file. For each artist, it also includes the first date they were listened to, the first song streamed, the total listening time, and the most streamed song. For each track, it includes the total listening time and the first date it was listened to.</li>
+                        <li>Finally, the script prints out the location of the Stats.txt file and what it contains.</li>
+                    </ol>
+                </div>
+                <div class="inner-box short">
+                    <h2>Here are some examples</h2>
+                    <ul>
+                        <li><a href="https://github.com/countervolts/Spotify-Stats-Calculator/blob/main/examples/CommandPromptOutput.txt">Command Prompt Output</a></li>
+                        <li><a href="https://github.com/countervolts/Spotify-Stats-Calculator/blob/main/examples/Stats.txt">Stats.txt Output</a></li>
+                    </ul>
+                </div>
+                <div class="inner-box short1">
+                    <h2>Pylint Rating</h2>
+                    <p>pylint rated my code a 8.52/10</p>
+                </div>
+            </div>
+        </div>
+        <div class="box" id="bypass">
+            <a href="https://github.com/countervolts/Google-Wifi-Router-Bypasser">Google Wifi Bypass</a>
+            <div class="inner-box-container">
+                <div class="inner-box long">
+                    <h2>What does the code do?</h2>
+                    <p>This Python script exploits a vulnerability within the pausing system which calls administrative devices starting with the "DE" Mac Address of Google Wifi routers. It automates the process of bypassing the pause feature with minimal human interaction required. The script changes the Network Address of the network interface, which effectively bypasses the pause feature of Google Wifi routers.</p>
+                    <h3>Step-by-step breakdown:</h3>
+                    <ol>
+                        <li>The script first checks if it's running with administrative privileges. If not, it attempts to run itself as an administrator.</li>
+                        <li>It retrieves the transport names (identifiers for network interfaces) from the system.</li>
+                        <li>The user is prompted to select a transport name from the list provided.</li>
+                        <li>The script searches the Windows Registry for instances of the selected transport name.</li>
+                        <li>For each instance found, it checks if a Network Address is already set. If not, the user is prompted to create one. If a Network Address is already set, the user is given the option to change it.</li>
+                        <li>The Network Address is a 12-character hexadecimal value (starting with DE to abusing the exploit). The script generates a random Network Address and sets it in the Registry.</li>
+                        <li>Finally, the user is instructed to restart their computer for the changes to take effect.</li>
+                    </ol>
+                </div>
+                <div class="inner-box short">
+                    <h2>How to Run the Compiled Version</h2>
+                    <h3>Additional Information:</h3>
+                    <p>The script only works for Google Wifi routers and has only been tested on Wifi connections. It may or may not work on Ethernet connections. If the Wifi gets paused again, the user will need to re-run the program to bypass the pause feature again.</p>
+                </div>
+                <div class="inner-box short1">
+                        <h2>Pylint Ratings</h2>
+                        <p>pylint rated my code a 7.69/10</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="scriptjava.js"></script>
+</body>
