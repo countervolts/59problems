@@ -158,10 +158,10 @@ body, html {
 
 .inner-box.short1 {
     flex: 1;
-    height: 48%; /* Increase this value to make the box taller */
+    height: 45.5%; 
     width: 100%;
     margin-top: 2%;
-    transform: translateX(-33.5%); /* Move the box 25% to the left */
+    transform: translateX(-33.5%); 
 }
 
 .inner-box.short + .inner-box.short1 {
