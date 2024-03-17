@@ -115,7 +115,7 @@ body, html {
 
 .button-container3 {
     position: absolute;
-    top: 50%; 
+    top: 90%; 
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between;
@@ -157,6 +157,17 @@ body, html {
     animation: fall 2s linear infinite;
     animation-delay: -1s;
     z-index: -1;
+}
+
+.source-code-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.source-code-button-text {
+    color: white;
+    text-decoration: none;
 }
 
 @keyframes fadeIn {
