@@ -4,4 +4,5 @@ so far just shows discord link + github link
 
 ## website map
 - https://59problems.me
-  -/coding
+
+  - /coding
