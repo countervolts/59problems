@@ -23,7 +23,7 @@ body, html {
     border-radius: 10px;
     z-index: 2;
     border: .5px solid; color: white;
-    animation: fadeIn 2.7s ease-in-out forwards;
+    animation: fadeIn 1.25s ease-in-out forwards;
 }
 
 .rectangle-image {
