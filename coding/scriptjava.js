@@ -1,7 +1,5 @@
 const background = document.querySelector('.background');
 
-
-// Create a snowflake every 75ms
 function snowflake() {
     const circle = document.createElement('div');
     circle.style.position = 'absolute';
@@ -22,35 +20,59 @@ function snowflake() {
 
 setInterval(snowflake, 75);
 
-const boxes = document.querySelectorAll('.box');
 const rectangle = document.querySelector('.rectangle');
 const spotify = document.querySelector('#spotify');
 
+const boxes = document.querySelectorAll('.box');
 
-// validation added so only 1 box can be expanded at a time
 boxes.forEach(box => {
     box.addEventListener('click', () => {
         boxes.forEach(otherBox => {
             if (otherBox !== box) {
                 otherBox.classList.remove('expanded');
+                const otherInfo = otherBox.querySelector('.info');
+                if (otherInfo) {
+                    otherInfo.style.display = 'none';
+                }
             }
         });
 
         box.classList.toggle('expanded');
+        const info = box.querySelector('.info');
+        if (info) {
+            if (box.classList.contains('expanded')) {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'block';
+            }
+        }
+
+        if (!Array.from(boxes).some(box => box.classList.contains('expanded'))) {
+            boxes.forEach(box => {
+                const info = box.querySelector('.info');
+                if (info) {
+                    info.style.display = 'block';
+                }
+            });
+        }
     });
 });
 
-// when the rectangle fades in, check if any other box is open
 rectangle.addEventListener('animationend', (event) => {
     if (event.animationName === 'fadeIn') {
         const openBox = Array.from(boxes).find(box => box.classList.contains('expanded'));
         if (!openBox) {
-            spotify.classList.add('expanded');
         }
     }
 });
 
-// when the rectangle fades out, close the spotify box
+rectangle.addEventListener('animationend', (event) => {
+    if (event.animationName === 'fadeOut') {
+        spotify.classList.remove('expanded');
+        spotify.querySelector('.info').style.display = 'flex';
+    }
+});
+
 const innerBoxes = document.querySelectorAll('.inner-box');
 
 innerBoxes.forEach(function(box) {
