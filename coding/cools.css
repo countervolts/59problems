@@ -126,13 +126,13 @@ body, html {
     padding: 10px;
     box-sizing: border-box;
     flex-direction: row;
-    flex-wrap: wrap; /* added this line */
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .box.expanded .inner-box-container {
     display: flex;
-    animation: fadeIn .8s ease-in-out forwards;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 .inner-box {
@@ -166,8 +166,20 @@ body, html {
 
 .inner-box.short + .inner-box.short1 {
     margin-top: 20%;
-    margin-left: -22%; /* Increase this value to move the box more to the left */
+    margin-left: -22%;
     margin-right: -10%;
+}
+
+.box .info {
+    display: none;
+}
+
+.box.expanded .info {
+    display: block;
+}
+
+.box:not(.expanded) .info {
+    display: block;
 }
 
 .github-link {
