@@ -5,4 +5,5 @@ working on the coding section of the site
 ## website map
 - https://59problems.me
 
+  - /
   - /coding
