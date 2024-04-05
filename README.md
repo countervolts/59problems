@@ -7,3 +7,5 @@ working on the coding section of the site
 
   - /
   - /coding
+  - /applemusic <- not done
+  - applemusic/users/ <- not done
