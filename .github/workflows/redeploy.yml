@@ -1,26 +1,29 @@
-name: Redeploy Site
+name: Redeploy on Push
 
 on:
   push:
-    paths:
-      - 'applemusic/**'
-      - 'spotify/**'
+    branches: [ main ]
 
 jobs:
-  redeploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Setup Jekyll
-      uses: actions/setup-ruby@v1
+    - uses: actions/checkout@v4
       with:
-        ruby-version: '2.6'
-
-    - name: Build site
+        submodules: recursive
+      
+    - name: Check for changes in applemusic or spotify folders
       run: |
-        gem install bundler
-        bundle install
-        bundle exec jekyll build
+        if [[ $(git status --porcelain --branch | grep " M " | grep "applemusic" || true) || $(git status --porcelain --branch | grep " M " | grep "spotify" || true) ]]; then
+          echo "Changes detected in applemusic or spotify folders. Triggering redeployment."
+          exit 0
+        else
+          echo "No changes detected in applemusic or spotify folders. Skipping redeployment."
+          exit 1
+        fi
+      
+    - name: Use your build and deploy steps here
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: deploy-artifact
