@@ -59,7 +59,6 @@
                     <p>This Python script is used to analyze the user's Apple Music listening history. It first locates the "Apple Music - Play History Daily Tracks.csv" file in the user's Downloads folder. If the file is not found, it prompts the user to place the file in the correct location and re-run the script.</p>
                     <h3>Step-by-step breakdown:</h3>
                     <ol>
-                        <li>The script then reads the CSV file into a pandas DataFrame, using the 'Date Played' column as a datetime object. It clears the console screen for better readability.</li>
                         <li>The script iterates over each row in the DataFrame, extracting the main artist from the 'Track Description' column and calculating the play duration in minutes. These values are then added to new columns in the DataFrame.</li>
                         <li>The script groups the DataFrame by artist and track, calculating the total play duration in minutes for each. It then sorts these groups and selects the top 50 artists and tracks.</li>
                         <li>It calculates some overall statistics, such as total streams, total minutes streamed, total hours streamed, number of different tracks, and number of different artists. The script then prints out the top 10 most streamed artists and tracks.</li>
