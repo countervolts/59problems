@@ -6,6 +6,7 @@ working on the coding section of the site
 - https://59problems.me
 
   - /
+  - /stats
   - /coding
   - /applemusic <- not done
   - /applemusic/users/ <- not done
