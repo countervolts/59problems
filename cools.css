@@ -1,165 +1,18 @@
-body, html {
-    font-family: 'Inter';
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    background: #333;
-    overflow: hidden;
-}
-
-.background {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.rectangle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 475px;
-    background: rgba(80, 79, 79, 0.5);
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    z-index: 2;
-    border: .5px solid; color: white;
-    animation: fadeIn 1.25s ease-in-out forwards;
-}
-
-.rectangle-image {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    height: 250px;
-    width: 250px;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    border: .5px solid white;
-}
-
-.rectangle-text {
-    position: absolute;
-    top: 70%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white; 
-    text-align: center;
-    font-size: larger;
-}
-
-.button-container {
-    position: absolute;
-    top: 80%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: space-between;
-    width: 220px;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-right: 10px;
-    color: white;
-    background: rgba(80, 79, 79, 0.7);
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: larger;
-    transition: background 0.3s;
-    text-align: center;
-}
-
-.button:last-child {
-    margin-right: 0;
-}
-
-.button:hover {
-    background: rgba(80, 79, 79, 1);
-}
-
-.button-container2 {
-    position: absolute;
-    top: 90%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.button2 {
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    background: rgba(80, 79, 79, 0.7);
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: larger;
-    transition: background 0.3s;
-    width: 69px;
-    text-align: center;
-}
-
-.button2:last-child {
-    margin-right: 0;
-}
-
-.button2:hover {
-    background: rgba(80, 79, 79, 1);
-}
-
-.button-container3 {
-    position: absolute;
-    top: 90%; 
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    margin-left: 90%;
-    margin-right: 10%;
-}
-
-.button3 {
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    background: rgba(80, 79, 79, 0.7);
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: larger;
-    transition: background 0.3s;
-    width: 60px;
-    text-align: center;
-}
-
-.button3:last-child {
-    margin-right: 0;
-}
-
-.button3:hover {
-    background: rgba(80, 79, 79, 1);
-}
-
-.background::before {
-    content: "";
-    position: absolute;
-    top: -10%;
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    animation: fall 2s linear infinite;
-    animation-delay: -1s;
-    z-index: -1;
+    padding: 0;
 }
 
 .source-code-button {
+    z-index: 1;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -179,4 +32,154 @@ body, html {
 @keyframes fall {
     0% { top: -10%; }
     100% { top: 110%; }
+}
+
+@keyframes expand {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 25%;
+    }
+}
+
+.small-text {
+    z-index: 1;
+    font-size: 16px;
+    color: rgba(100, 100, 100, 0.7); 
+    text-align: center;
+    margin-bottom: 10px;
+    animation: fadeInSmallText 0.5s ease-in 1s forwards;
+    opacity: 0;
+}
+
+.separator {
+    z-index: 1;
+    width: 25%;
+    height: 2px;
+    background-color: rgba(220, 220, 220, 0.5);
+    margin-bottom: 20px;
+    animation: expand 2s ease-out forwards, fadeInSeparator 2s ease-in forwards;
+    opacity: 0;
+}
+
+.big-text {
+    z-index: 1;
+    font-size: 32px;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: fadeInBigText 1s ease-in 1s forwards; 
+    opacity: 0;
+}
+
+@keyframes fadeInSmallText {
+    from { opacity: 0; }
+    to { opacity: 0.7; }
+}
+
+@keyframes fadeInSeparator {
+    from { opacity: 0; }
+    to { opacity: 0.5; }
+}
+
+@keyframes fadeInBigText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInButtons {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    transition: background-color .3s ease;
+    z-index: 1;
+    position: relative;
+    animation: fadeInButtons 2s ease-in forwards, slideInFromBottom 2s ease-in forwards;
+    opacity: 0;
+}
+
+.button span {
+    opacity: 0;
+    animation: fadeInButtons 2s ease-in 0.5s forwards;
+}
+
+.button:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.button:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.button:nth-child(3) {
+    animation-delay: .5s;
+}
+
+.button:nth-child(4) {
+    animation-delay: .75s;
+}
+
+.button::before,
+.button::after {
+    content: "";
+    position: absolute;
+    width: 0%; height: 0%;
+    opacity: 0;
+}
+
+.button::before {
+    top: 0; right: 0;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    transition: width 0.2s 0.5s ease-out, height 0.15s 0.35s linear, opacity 0s 0.7s;
+}
+
+.button::after {
+    bottom: 0; left: 0px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transition: width 0.2s 0.15s linear, height 0.15s ease-in, opacity 0s 0.35s;
+}
+
+.button:hover::before,
+.button:hover::after {
+    width: 100%; height: 99%;
+    opacity: 1;
+}
+
+.button:hover::before {
+    transition: width 0.2s ease-in, height 0.15s 0.2s linear, opacity 0s;
+}
+
+.button:hover::after {
+    transition: width 0.2s 0.35s linear, height 0.15s 0.5s ease-out, opacity 0s 0.3s;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
