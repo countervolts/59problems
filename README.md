@@ -12,6 +12,17 @@ working on the coding section of the site
   - /applemusic/users/ <- not done
   - /spotify <- not done
   - /spotify/users/ <- not done
+
+### Subdomains
+- https://hosting.59problems.me
+
+  - /
+  - /contact
+  - /join
+  - /help
+  - /support
+  - /welcome <-- not done
+  - /terms
  
 ## what is with the commits????
 basically whenever i (or anyone else) upload files for either by running either spotify or apple music stats calculator it counts towards 22 commits because it uploads the following
